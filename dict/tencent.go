@@ -41,9 +41,9 @@ type tencentDictResponse struct {
 func TencentQuery(word string) string {
 	client := &http.Client{}
 
-	var data = fmt.Sprintf(`source=auto&target=zh&sourceText=%v&qtv=5d94939721cd5d83&qtk=wgoABMjwqwRTOA8mIglYINu24XRtctJF%2BCeRb0x0mrdcIlBNHH%2BEAN8QXSFci0KBRU6l0mEiKzxtU8t6kcR3g0CcKcILoELs60TAc3EcRBaC6wz2J0WnpqnK6Ln8e0NS8ep2b%2BsdLaTkolgO92Kp%2FQ%3D%3D&ticket=&randstr=&sessionUuid=translate_uuid1690264966595`, word)
-	var read = strings.NewReader(data)
-	req, err := http.NewRequest("POST", "https://fanyi.qq.com/api/translate", read)
+	var data = fmt.Sprintf(`source=auto&target=zh&sourceText=%v&qtv=5d94939721cd5d83&qtk=wgoABMjwqwRTOA8mIglYINu24XRtctJF%%2BCeRb0x0mrdcIlBNHH%%2BEAN8QXSFci0KBRU6l0mEiKzxtU8t6kcR3g0CcKcILoELs60TAc3EcRBaC6wz2J0WnpqnK6Ln8e0NS8ep2b%%2BsdLaTkolgO92Kp%%2FQ%%3D%%3D&ticket=&randstr=&sessionUuid=translate_uuid1690264966595`, word)
+	var reader = strings.NewReader(data)
+	req, err := http.NewRequest("POST", "https://fanyi.qq.com/api/translate", reader)
 	if err != nil {
 		log.Fatal(err)
 	}
