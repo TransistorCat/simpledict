@@ -34,5 +34,6 @@ func main() {
 	wg.Wait()
 
 	result := caiyunResult + tencentResult
+	dict.BingQuery(word)
 	fmt.Print(result)
 }
